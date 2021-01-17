@@ -18,11 +18,9 @@ namespace MVCINTROHNK.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(ContactFormModel model)
+        public ActionResult ContactForm(ContactFormModel model)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(model);
         }
     }
 }

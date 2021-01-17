@@ -44,21 +44,22 @@
                     <li><span>Email:</span>yourmail@gmail.com</li>
                 </ul>
             </div>
+            <!--Html BeginForm Örneği-->
             <div class="col-lg-8">
-                @{Html.BeginForm("Index", "Contact", FormMethod.Post, new { style = "", @class = "contact-form" });
+                @{Html.BeginForm("ContactForm", "Contact", FormMethod.Post, new { style = "", @class = "contact-form" });
 
                     <div class="row">
                         <div class="col-md-12">
-                            @Html.TextBoxFor(m => m.NameSurname, new { placeholder = "Adınız Soyadnız" })
+                            @Html.TextBoxFor(m => m.NameSurname, new { placeholder = "Adınız Soyadnız" , required = "required"})
                         </div>
                         <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Email,new { placeholder = "E-Mail" })
+                            @Html.TextBoxFor(m => m.Email,new { placeholder = "E-Mail",type = "email", required = "required" })
                         </div>
                         <div class="col-md-6">
-                            @Html.TextBoxFor(m => m.Subject,new { placeholder = "Konu" })
+                            @Html.TextBoxFor(m => m.Subject,new { placeholder = "Konu", required = "required" })
                         </div>
                         <div class="col-md-12">
-                            @Html.TextAreaFor(m => m.Message,new { placeholder = "Mesaj" })
+                            @Html.TextAreaFor(m => m.Message,new { placeholder = "Mesaj", required = "required"})
                             <button class="site-btn">Send <i class="fa fa-angle-right"></i></button>
                         </div>
                     </div>

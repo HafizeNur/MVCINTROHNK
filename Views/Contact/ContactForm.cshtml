@@ -1,0 +1,43 @@
+﻿@using System.Web.Mvc.Ajax
+@model BasicMvcExample.Models.Contact.ContactFormModel
+
+@{
+    ViewBag.Title = "Contact Result";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="Assets/img/page-top-bg.jpg">
+    <div class="container text-white">
+        <h3>Contact</h3>
+    </div>
+</section>
+<!--  Page top end -->
+<!-- Contact section -->
+<section class="contact-section spad">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h5>Kayıt Bilgileri Yazdırılıyor</h5><br/>
+                <div class="row">
+                    <div class="col-md-12">
+                        @Html.Label(Model.NameSurname)
+                    </div>
+                    <div class="col-md-12">
+                        @Html.Label(Model.Email)
+                    </div>
+                    <div class="col-md-12">
+                        @Html.Label(Model.Subject)
+                    </div>
+                    <div class="col-md-12">
+                        @Html.Label(Model.Message)
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact section end -->
