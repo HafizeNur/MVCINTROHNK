@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "DummyProvincialPlate";
+}
+
+
+<h2>Dummy Dropdown Listesi Oluştur</h2>
+
+@using (Html.BeginForm("DummyProvincialPlatePost", "Dropdown", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+
+    <p>@Html.DropDownList("_dumyProvincialPlate", "Lütfen bir il seçiniz...")</p>
+    <p><input type="submit" class="btn btn-default" value="Gonder"/></p>
+}
+
+
+

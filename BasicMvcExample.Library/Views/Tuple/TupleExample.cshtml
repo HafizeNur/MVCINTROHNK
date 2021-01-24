@@ -1,0 +1,59 @@
+﻿@model Tuple<BasicMvcExample.Library.Models.Tuple.PersonalInformation, BasicMvcExample.Library.Models.Tuple.ContactInformation>
+
+@{
+    ViewBag.Title = "TupleExample";
+}
+
+<h2>Tuple Example</h2>
+
+@Model.Item1.Name
+<br />
+@Model.Item1.Surname
+<br />
+@Model.Item2.Address
+<br />
+@Model.Item2.Phone
+<br />
+
+
+@using (Html.BeginForm("TupleExamplePost", "Tuple", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Item1.Name, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Item1.Name, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Item1.Surname, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Item1.Surname, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Gönder" />
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("TupleExamplePost2", "Tuple", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Item2.Phone, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Item2.Phone, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Item2.Address, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.Item2.Address, new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Gönder" />
+        </div>
+    </div>
+}
